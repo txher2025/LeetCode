@@ -1,3 +1,25 @@
+class Solution {
+    public boolean areOccurrencesEqual(String s) {
+       int[] freq = new int[26];
+
+        // Count character frequencies
+        for (char ch : s.toCharArray()) {
+            freq[ch - 'a']++;
+        }
+
+        // Find the first non-zero frequency
+        int targetFreq = 0;
+        for (int f : freq) {
+            if (f > 0) {
+                if (targetFreq == 0) targetFreq = f;
+                if (targetFreq != f) return false;
+            }
+        }
+        return true;
+    }
+ 
+    }
+
 <h2><a href="https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences">Check if All Characters Have Equal Number of Occurrences</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given a string <code>s</code>, return <code>true</code><em> if </em><code>s</code><em> is a <strong>good</strong> string, or </em><code>false</code><em> otherwise</em>.</p>
 
 <p>A string <code>s</code> is <strong>good</strong> if <strong>all</strong> the characters that appear in <code>s</code> have the <strong>same</strong> number of occurrences (i.e., the same frequency).</p>
