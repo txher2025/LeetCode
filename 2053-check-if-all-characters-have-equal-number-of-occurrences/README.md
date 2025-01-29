@@ -1,11 +1,15 @@
-class Solution {
-    public boolean areOccurrencesEqual(String s) {
-       int[] freq = new int[26];
 
-        // Count character frequencies
-        for (char ch : s.toCharArray()) {
-            freq[ch - 'a']++;
-        }
+
+
+
+	class Solution {
+    		public boolean areOccurrencesEqual(String s) {
+       			int[] freq = new int[26];
+	
+        		// Count character frequencies
+        		for (char ch : s.toCharArray()) {
+          			  freq[ch - 'a']++;
+        		}
 
         // Find the first non-zero frequency
         int targetFreq = 0;
